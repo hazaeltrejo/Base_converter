@@ -35,7 +35,6 @@ def hexadecimal_to_decimal(hexadecimal):
         position += 1
     print(decimal)
     return decimal
-
 def  get_character_hexadecimal(value):
     value = str(value)
     equival = {
@@ -50,7 +49,6 @@ def  get_character_hexadecimal(value):
         return equival[value]
     else:
         return value
-
 def get_real_number(character_hexadecimal):
     equival = {
         "f": 15,
@@ -64,3 +62,28 @@ def get_real_number(character_hexadecimal):
         return equival[character_hexadecimal]
     else:
         return int(character_hexadecimal)
+def decimal_to_binary(number):
+    if number <= 0:
+        return "0"
+    binary = ""
+    while number > 0:
+        resid = int(number % 2)
+        number = int(number / 2)
+        binary = str(resid) + binary
+    return binary
+def decimal_to_octal(decimal):
+    octal=""
+    while decimal>0:
+        resid=decimal % 8
+        octal=str(resid)+octal
+        decimal=int(decimal/8)
+    return octal
+def decimal_to_hexadecimal(decimal):
+    hexadecimal=""
+    while decimal>0:
+        resid=decimal % 16
+        character=get_real_number(resid)
+        hexadecimal=character+hexadecimal
+        decimal=decimal/16
+    return hexadecimal
+            
